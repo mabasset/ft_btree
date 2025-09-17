@@ -1,12 +1,17 @@
 #include "ft_btree.h"
 
-void    btree_insert_data(t_btree **root, void *item, int (*cmpf)(void *, void *)) {
-    if (*root == NULL)
-        *root = btree_create_node(item);
-    else if (cmpf(item, (*root)->item) < 0)
-        btree_insert_data(&((*root)->left), item, cmpf);
-    else
-        btree_insert_data(&((*root)->right), item, cmpf);
+int btree_level_count(t_btree *root) {
+    int left;
+    int right;
+
+    if (root == NULL)
+        return 0;
+    left = btree_level_count(root->left);
+    right = btree_level_count(root->right);
+    if (right > left)
+        return right + 1;
+
+    return left + 1;
 }
 
 // #include <stdio.h>
@@ -33,5 +38,6 @@ void    btree_insert_data(t_btree **root, void *item, int (*cmpf)(void *, void *
 //     for (int i = 0; i < 10; i++)
 //         btree_insert_data(&btree, &ar[i], ft_intcmp);
 //     btree_apply_infix(btree, ft_print_int);
-//     printf("\n");
+//     printf("\n------------------\n");
+//     printf("level count: %d\n", btree_level_count(btree));
 // }
