@@ -1,7 +1,7 @@
 #ifndef FT_BTREE_H
 # define FT_BTREE_H
 
-# include "ft_list.h"
+# include "../list/ft_list.h"
 
 typedef struct s_btree
 {
