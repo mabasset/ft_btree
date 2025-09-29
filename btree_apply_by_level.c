@@ -1,5 +1,4 @@
 #include "ft_btree.h"
-#include "../list/ft_list.h"
 
 void    btree_apply_in_level(t_list *curr, int level, void (*applyf)()) {
     t_list  *next;
@@ -61,7 +60,7 @@ void    btree_apply_by_level(t_btree *root, void (*applyf)(void *item, int curre
 //     btree = NULL;
 //     for (int i = 0; i < 10; i++)
 //         btree_insert_data(&btree, &ar[i], ft_intcmp);
-//     btree_apply_infix(btree, ft_print_int);
+//     btree_apply_inorder(btree, ft_print_int);
 //     printf("\n------------------\n");
 //     btree_apply_by_level(btree, ft_print_int_level);
 // }

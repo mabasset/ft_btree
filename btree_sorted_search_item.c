@@ -5,10 +5,10 @@ void    *btree_sorted_search_item(t_btree *root, void *data_ref, int (*cmpf)(voi
 
     if (root == NULL)
         return NULL;
-    diff = cmpf(data_ref, root->item);
+    diff = cmpf(root->item, data_ref);
     if (diff == 0)
         return root->item;
-    if (diff < 0)
+    if (diff > 0)
         return btree_sorted_search_item(root->left, data_ref, cmpf);
 
     return btree_sorted_search_item(root->right, data_ref, cmpf);
@@ -36,7 +36,7 @@ void    *btree_sorted_search_item(t_btree *root, void *data_ref, int (*cmpf)(voi
 //     btree = NULL;
 //     for (int i = 0; i < 10; i++)
 //         btree_insert_data(&btree, &ar[i], ft_intcmp);
-//     btree_apply_infix(btree, ft_print_int);
+//     btree_apply_inorder(btree, ft_print_int);
 //     printf("\n------------------\n");
 //     x = 0;
 //     printf("search for: %d\n", x);

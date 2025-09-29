@@ -35,7 +35,7 @@ void    *btree_search_item(t_btree *root, void *data_ref, int (*cmpf)(void *, vo
 //     btree = NULL;
 //     for (int i = 0; i < 10; i++)
 //         btree_insert_data(&btree, &ar[i], ft_intcmp);
-//     btree_apply_infix(btree, ft_print_int);
+//     btree_apply_inorder(btree, ft_print_int);
 //     printf("\n------------------\n");
 //     x = 1;
 //     printf("search for: %d\n", x);
