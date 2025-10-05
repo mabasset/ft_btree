@@ -23,5 +23,6 @@ void    *btree_sorted_search_item(t_btree *root, void *data_ref, int (*cmpf)(voi
 int     btree_level_count(t_btree *root);
 void    btree_insert_list(t_btree **root, t_list *list, int (*cmpf)(void *, void *));
 t_btree *btree_create_from_list(t_list *list, int (*cmpf)(void *, void *));
+void    btree_clear(t_btree *root, void (*free_fct)(void *));
 
 #endif
