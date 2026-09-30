@@ -1,6 +1,6 @@
 #include "ft_btree.h"
 
-void    btree_apply_in_level(t_list *curr, int level, void (*applyf)()) {
+void    btree_apply_in_level(t_list *curr, int level, void (*applyf)(void *, int, int)) {
     t_list  *next;
     int     first;
     t_btree *data;
